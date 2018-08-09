@@ -10,6 +10,7 @@
     {% if item != None %}
     <a href="{% url 'index' %}">Back</a>
     <h3>{{ item.name }}</h3>
+     <h5>{{ item.category }}</h5>
     <p>{{ item.description }}</p>
     {% else %}
     <h3>Invalid Item id</h3>
