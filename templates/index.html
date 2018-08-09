@@ -6,8 +6,7 @@
 <body>
 <h1>Programming Database</h1>
 {% for item in items %}
-    <h3>{{ item.name }}</h3>
-    <p>{{ item.description  }}</p>
+    <a href = "{% url 'item' item_id=item.id %}">{{ item.name }}</a>
 {% endfor %}
 </body>
 </html>

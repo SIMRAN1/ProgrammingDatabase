@@ -13,3 +13,10 @@ def index(request):
         'items' : Item.objects.all()
     }
     return HttpResponse(template.render(context,request))
+
+def item(request,item_id):
+    template = loader.get_template('item.html')
+    context = {
+        'item' : Item.objects.get(id=item_id)
+    }
+    return  HttpResponse(template.render(context,request))
