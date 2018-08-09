@@ -10,6 +10,6 @@ from pdbapp.models import Item
 def index(request):
     template = loader.get_template('index.html')
     context = {
-        'java' : Item.objects.get(id='1')
+        'items' : Item.objects.all()
     }
     return HttpResponse(template.render(context,request))

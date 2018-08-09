@@ -5,7 +5,9 @@
 </head>
 <body>
 <h1>Programming Database</h1>
-<h3>{{ java.name }}</h3>
-<p>{{ java.description }}</p>
+{% for item in items %}
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.description  }}</p>
+{% endfor %}
 </body>
 </html>
