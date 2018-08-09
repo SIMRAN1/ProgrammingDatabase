@@ -1,10 +1,18 @@
 <html>
 <head>
-    <title>{{ item.name }}-Programming Datbase</title>
+    {% if item != None %}
+        <title>{{ item.name }}-Programming Datbase</title>
+        {% else %}
+        <title>Invalid Item - Programming Database</title>
+    {% endif %}
 </head>
 <body>
-<a href="{% url 'index' %}">Back</a>
-<h3>{{ item.name }}</h3>
-<p>{{ item.description }}</p>
+{% if item != None %}
+    <a href="{% url 'index' %}">Back</a>
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.description }}</p>
+    {% else %}
+    <h3>Invalid Item id</h3>
+{% endif %}
 </body>
 </html>
