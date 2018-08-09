@@ -1,18 +1,17 @@
-<html>
-<head>
-    {% if item != None %}
+{% extends 'base.html' %}
+{% block head %}
+     {% if item != None %}
         <title>{{ item.name }}-Programming Datbase</title>
         {% else %}
         <title>Invalid Item - Programming Database</title>
     {% endif %}
-</head>
-<body>
-{% if item != None %}
+{% endblock %}
+{% block body %}
+    {% if item != None %}
     <a href="{% url 'index' %}">Back</a>
     <h3>{{ item.name }}</h3>
     <p>{{ item.description }}</p>
     {% else %}
     <h3>Invalid Item id</h3>
 {% endif %}
-</body>
-</html>
+{% endblock %}
