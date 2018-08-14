@@ -12,6 +12,7 @@ class Category(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=32)
     description = models.TextField()
+    image = models.ImageField(blank=True,null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
